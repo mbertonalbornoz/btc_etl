@@ -1,2 +1,7 @@
-.idea/
-btc/logs
+target/
+dbt_packages/
+logs/
+dbt_internal_packages/
+.DS_Store
+snowflake_key.p8
+snowflake_key.pub
