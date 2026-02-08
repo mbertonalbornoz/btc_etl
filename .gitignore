@@ -1,3 +1,5 @@
+.idea/
+btc/logs
 target/
 dbt_packages/
 logs/
