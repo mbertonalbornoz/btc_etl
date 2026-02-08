@@ -13,6 +13,6 @@ WITH whales AS (SELECT
 SELECT w.output_address
      , w.total_sent
      , w.t_count
-     , {{ convert_to_usd('w.total_sent') }} AS total_usd
+     , {{ convert_to_usd('w.total_sent') }} AS total_sent_usd
 FROM WHALES AS w
 ORDER BY total_sent DESC
