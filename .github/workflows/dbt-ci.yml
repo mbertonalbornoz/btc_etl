@@ -9,6 +9,9 @@ jobs:
   dbt-run:
     runs-on: ubuntu-latest
     environment: DBT_BTC
+    defaults:
+      run:
+        working-directory: btc
 
     steps:
       - name: Checkout repo
@@ -33,9 +36,6 @@ jobs:
         env:
           DBT_PROFILES_YML: ${{ secrets.DBT_PROFILES_YML }}
           DBT_PRIVATE_KEY: ${{ secrets.DBT_PRIVATE_KEY }}
-
-      - name: Go into project folder
-        run: cd btc
 
       - name: Install dbt deps
         run: dbt deps
