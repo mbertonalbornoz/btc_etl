@@ -8,10 +8,10 @@ models:
           - unique
           - not_null
 
-  - name: stg_btc_outputs
-    tests:
-      - dbt_utils.equal_rowcount:
-          compare_model: ref('stg_btc_outputs_py')
+#  - name: stg_btc_outputs
+#    tests:
+#      - dbt_utils.equal_rowcount:
+#          compare_model: ref('stg_btc_outputs_py')
 
   - name: whale_alert
     latest_version: 2

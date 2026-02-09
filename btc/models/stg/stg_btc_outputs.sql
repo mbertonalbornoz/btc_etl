@@ -22,7 +22,8 @@ WHERE 1=1
 )
 
 SELECT
-    hash_key
+    '{{ invocation_id }}' AS invocation_id
+    , hash_key
     , block_number
     , block_timestamp
     , is_coinbase

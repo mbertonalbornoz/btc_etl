@@ -25,6 +25,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
+on-run-end:
+  - "{{ log_dbt_results(results) }}"
 
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
@@ -34,6 +36,9 @@ models:
     marts:
       +materialized: table
       +post-hook:
-        - "COMMENT ON TABLE {{ this }} IS 'This table was created by dbt.';"
+        - "COMMENT ON TABLE {{ this }} IS 'This table was created by dbt_111.';"
         - "{{ create_latest_version_view() }}"
 
+#query-comment:
+#  comment: 'This was run by dbt.'
+#  append: true
