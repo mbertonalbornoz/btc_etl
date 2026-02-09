@@ -32,5 +32,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   btc:
     marts:
-      +materialized: view
+      +materialized: table
+      +post-hook:
+        - "COMMENT ON TABLE {{ this }} IS 'This table was created by dbt.';"
+        - "{{ create_latest_version_view() }}"
 
