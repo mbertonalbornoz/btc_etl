@@ -14,6 +14,7 @@
                 'database_name': node.get('database'),
                 'schema_name': node.get('schema'),
                 'name': node.get('name'),
+                'resource_type': node.get('resource_type'),
                 'status': run_result_dict.get('status'),
                 'execution_time': run_result_dict.get('execution_time'),
                 'rows_affected': rows_affected

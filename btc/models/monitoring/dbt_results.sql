@@ -12,6 +12,7 @@ WITH empty_table AS (
         , NULL AS database_name
         , NULL AS schema_name
         , NULL AS name
+        , NULL AS resource_type
         , NULL AS status
         , CAST(NULL AS FLOAT) AS execution_time
         , CAST(NULL AS INT) AS rows_affected

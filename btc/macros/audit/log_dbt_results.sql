@@ -12,6 +12,7 @@
                         database_name,
                         schema_name,
                         name,
+                        resource_type,
                         status,
                         execution_time,
                         rows_affected
@@ -24,6 +25,7 @@
                             '{{ parsed_result_dict.get('database_name') }}',
                             '{{ parsed_result_dict.get('schema_name') }}',
                             '{{ parsed_result_dict.get('name') }}',
+                            '{{ parsed_result_dict.get('resource_type') }}',
                             '{{ parsed_result_dict.get('status') }}',
                             {{ parsed_result_dict.get('execution_time') }},
                             {{ parsed_result_dict.get('rows_affected') }}
