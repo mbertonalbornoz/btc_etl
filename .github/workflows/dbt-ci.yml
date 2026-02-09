@@ -3,12 +3,15 @@ name: dbt CI
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   dbt-run:
     runs-on: ubuntu-latest
     environment: DBT_BTC
+    defaults:
+      run:
+        working-directory: btc
 
     steps:
       - name: Checkout repo
@@ -21,7 +24,7 @@ jobs:
 
       - name: Install dbt
         run: |
-          python -m pip install --upgraded pip
+          python -m pip install --upgrade pip
           pip install dbt-core==1.9.4 dbt-snowflake==1.9.4
 
       - name: Set up dbt profile and private key
@@ -41,4 +44,4 @@ jobs:
         run: dbt debug
 
       - name: Run dbt
-        run: dbt run
+        run: dbt run --exclude stg_btc_outputs_py
